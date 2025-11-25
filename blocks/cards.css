@@ -10,6 +10,6 @@
   grid-template-columns: repeat(auto-fit, 413px);
   justify-content: center;
   gap: 40px 20px;
-  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-family: "Poppins-Medium", Arial, Helvetica, sans-serif;
   color: #212121;
 }
