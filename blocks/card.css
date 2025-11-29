@@ -46,4 +46,8 @@
     height: 288px;
     width: 288px;
   }
+
+  .card__title {
+    max-width: 200px;
+  }
 }
