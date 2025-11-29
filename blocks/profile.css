@@ -58,6 +58,8 @@
   opacity: 0.7;
 }
 
+/* @664px to 678px the text on the add btn shifts to two lines, seems to only happen in desktop setting */
+
 .profile__add-btn-dim {
   height: 12px;
   width: 12px;
@@ -76,8 +78,6 @@
   gap: 8px;
 }
 
-/* @ 663px to 627px avatar title and the new post button word wrap to a second line */
-
 @media screen and (max-width: 663px) {
   .profile {
     flex-direction: column;
@@ -92,6 +92,7 @@
     padding-bottom: 12px;
     height: 80px;
     width: 80px;
+    border-radius: 15px;
   }
 
   .profile__name {
