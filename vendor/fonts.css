@@ -6,8 +6,8 @@
 }
 
 @font-face {
-  font-family: "Poppins-M";
-  font-style: medium;
+  font-family: "Poppins";
+  font-style: normal;
   font-weight: 500;
   src: url(./fonts/Poppins-Medium.ttf);
 }
