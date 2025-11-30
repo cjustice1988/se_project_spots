@@ -4,7 +4,7 @@
   border-bottom: 1px solid rgba(33, 33, 33, 0.4);
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-weight: 500;
-  font-style: medium;
+  font-style: normal;
 }
 
 .profile__avatar {
@@ -22,7 +22,7 @@
 .profile__name {
   margin: 0 0 12px;
   font-weight: 500;
-  font-style: medium;
+
   max-width: 420px;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -58,7 +58,10 @@
   opacity: 0.7;
 }
 
-/* @664px to 678px the text on the add btn shifts to two lines, seems to only happen in desktop setting */
+.profile__edit-btn:hover {
+  opacity: 100;
+}
+
 
 .profile__add-btn-dim {
   height: 12px;
@@ -72,10 +75,16 @@
   color: #fcf5e5;
   border: none;
   border-radius: 10px;
-  padding: 18px 32px;
   display: flex;
+  align-items: center;
+  justify-content: space-evenly;
   height: 52px;
+  width: 149px;
   gap: 8px;
+}
+
+.profile__add-btn:hover {
+  opacity: 0.4;
 }
 
 @media screen and (max-width: 663px) {

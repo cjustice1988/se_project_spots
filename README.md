@@ -1,5 +1,25 @@
 # Project 3: Spots
 
+## Link to active website [Spots](https://cjustice1988.github.io/se_project_spots/)
+
+## Check out this [this video](https://drive.google.com/file/d/1gO2D1WGOXKquGKzqE9Js0Y-OzfJgqAL9/view?usp=sharing), ctrl+click the link!  Where I describe my project and some of the challenges I faced while building it
+
+### An art oriented responsive web-page.  Basic HTML5 markup used on index.html.  CSS grid and many flexbox elements being used for the styling layout of the page itself.  Media queries set to shift elements around based on max-width of the viewport.
+
+* BEM naming convention used
+* All CSS broken out into blocks and linked to main index.css
+* At 1440px profile is at top, three columns and two row layout for images
+* At 1370px profile is at top, two columns and three row layout for images
+* At 940px profile is at top, one column and six row layout for images
+* At 662px profile shifts to be more readable.  Avatar image shrinks, font size and margins change slightly.
+* At 626px card images shrink to smaller size
+
+### All text items are trunkated, and will cover by ellipsis if there is an overflow present.
+
+* Name and Descriptor set to trigger overflow at three lines of text
+* Card titles are set to a single line of text, with a max-width of 200px to give room for the like buttons
+
+
 ### Overview  
 
 * Intro  
