@@ -26,7 +26,7 @@ const newCaptionInput = newPostModal.querySelector("#card-caption-input");
 // Functionality of edit profile button
 // open modal
 editProfileBtn.addEventListener("click", function () {
-  editProfileModal.classList.add("modal__is-opened");
+  editProfileModal.classList.add("modal_is-opened");
   editProfileInput.value = editProfileText.textContent;
   editDescriptionInput.value = editDescriptionText.textContent;
 });
@@ -36,32 +36,32 @@ function handleEditProfileSubmit(evt) {
   evt.preventDefault();
   editProfileText.textContent = editProfileInput.value;
   editDescriptionText.textContent = editDescriptionInput.value;
-  editProfileModal.classList.remove("modal__is-opened");
+  editProfileModal.classList.remove("modal_is-opened");
 }
 
 editProfileForm.addEventListener("submit", handleEditProfileSubmit);
 
 // close modal
 editProfileModalCloseBtn.addEventListener("click", function () {
-  editProfileModal.classList.remove("modal__is-opened");
+  editProfileModal.classList.remove("modal_is-opened");
 });
 
 // Functionality of new post button
 // open modal
 newPostBtn.addEventListener("click", function () {
-  newPostModal.classList.add("modal__is-opened");
+  newPostModal.classList.add("modal_is-opened");
 });
 
 // close modal
 newPostModalCloseBtn.addEventListener("click", function () {
-  newPostModal.classList.remove("modal__is-opened");
+  newPostModal.classList.remove("modal_is-opened");
 });
 
 function handleAddCardSubmit (evt) {
   evt.preventDefault();
   console.log(newLinkInput.value);
   console.log(newCaptionInput.value);
-  newPostModal.classList.remove("modal__is-opened");
+  newPostModal.classList.remove("modal_is-opened");
 }
 
 addCardForm.addEventListener("submit", handleAddCardSubmit);
