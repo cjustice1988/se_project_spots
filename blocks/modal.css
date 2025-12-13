@@ -1,4 +1,6 @@
 .modal {
+  visibility: hidden;
+  /* shouldnt need the above declaration with starting on opacity:0*/
   opacity: 0;
   pointer-events: none;
   transition: opacity 1s ease;
