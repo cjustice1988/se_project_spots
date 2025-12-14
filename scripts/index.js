@@ -65,7 +65,7 @@ newPostModalCloseBtn.addEventListener("click", function () {
   closeModal(newPostModal);
 });
 
-function handleAddCardSubmit (evt) {
+function handleAddCardSubmit(evt) {
   evt.preventDefault();
   console.log(newLinkInput.value);
   console.log(newCaptionInput.value);
