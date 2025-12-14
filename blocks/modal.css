@@ -45,7 +45,11 @@
   border: none;
   background-color: #fff;
   cursor: pointer;
-  /* add hover state */
+  opacity: 0.4;
+}
+
+.modal__close-btn:hover {
+  opacity: 1;
 }
 
 .modal__title {
@@ -95,7 +99,11 @@
   font-weight: 500;
   font-size: 16px;
   cursor: pointer;
-  /* add hover state */
+  opacity: 1;
+}
+
+.modal__save-btn:hover {
+  opacity: 0.8;
 }
 
 @media screen and (max-width: 627px) {
