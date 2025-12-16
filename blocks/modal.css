@@ -3,7 +3,7 @@
   /* shouldnt need the above declaration with starting on opacity:0*/
   opacity: 0;
   pointer-events: none;
-  transition: opacity 1s ease;
+  transition: visibility 0.3s opacity 0.3s ease-in;
   background-color: #00000080;
   position: fixed;
   display: flex;
@@ -114,7 +114,7 @@
 
   .modal__container {
     max-width: 300px;
-    padding: 12px;
+    padding: 22px 12px 12px;
   }
 
   .modal__close-btn {
