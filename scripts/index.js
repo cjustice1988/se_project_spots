@@ -56,10 +56,18 @@ function getCardElement(data) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardTitleElement = cardElement.querySelector(".card__title");
   const cardImageElement = cardElement.querySelector(".card__image");
-
+  const cardLikeBtn = cardElement.querySelector(".card__like-btn");
+  const cardDelBtn = cardElement.querySelector(".card__delete-btn");
   cardTitleElement.alt = data.name;
   cardTitleElement.textContent = data.name;
   cardImageElement.src = data.link;
+  cardDelBtn.addEventListener("click", () => {
+    cardDelBtn.closest(".card").remove();
+  })
+  cardLikeBtn.addEventListener("click", () => {
+    cardElement.remove();
+      cardElement = null;
+  });
 
   return cardElement;
 }
@@ -110,6 +118,13 @@ function handleAddCardSubmit(evt) {
   evt.preventDefault();
   console.log(newLinkInput.value);
   console.log(newCaptionInput.value);
+
+   const cardElement = getCardElement({
+    name: newCaptionInput.value,
+    link: newLinkInput.value
+   });
+  cardsList.prepend(cardElement);
+
   closeModal(newPostModal);
 }
 
