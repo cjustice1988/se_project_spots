@@ -1,6 +1,10 @@
 // declaring variables
 const initialCards = [
   {
+    name: "Golden Gate Bridge",
+    link: " https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
+  },
+  {
     name: "Val Thorens",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
   },
@@ -45,6 +49,14 @@ const editProfileForm = editProfileModal.querySelector(".modal__form");
 const addCardForm = newPostModal.querySelector(".modal__form");
 const newLinkInput = newPostModal.querySelector("#card-image-input");
 const newCaptionInput = newPostModal.querySelector("#card-caption-input");
+
+const previewModal = document.querySelector("#preview_modal");
+const previewModalCloseBtn = previewModal.querySelector(
+  ".modal__close-btn_preview"
+);
+const previewImageElement = previewModal.querySelector(".modal__image");
+const previewCaptionElement = previewModal.querySelector(".modal__caption");
+
 const cardTemplate = document
   .querySelector("#card-template")
   .content.querySelector(".card");
@@ -58,15 +70,24 @@ function getCardElement(data) {
   const cardImageElement = cardElement.querySelector(".card__image");
   const cardLikeBtn = cardElement.querySelector(".card__like-btn");
   const cardDelBtn = cardElement.querySelector(".card__delete-btn");
+
   cardTitleElement.alt = data.name;
   cardTitleElement.textContent = data.name;
   cardImageElement.src = data.link;
+
+  cardImageElement.addEventListener("click", () => {
+    previewImageElement.src = data.link;
+    previewCaptionElement.textContent = data.name;
+    previewCaptionElement.alt = data.name;
+    openModal(previewModal);
+  });
+
   cardDelBtn.addEventListener("click", () => {
     cardDelBtn.closest(".card").remove();
-  })
+  });
+
   cardLikeBtn.addEventListener("click", () => {
-    cardElement.remove();
-      cardElement = null;
+    cardLikeBtn.classList.toggle("card__like-btn_active");
   });
 
   return cardElement;
@@ -79,6 +100,10 @@ function openModal(modal) {
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
 }
+
+previewModalCloseBtn.addEventListener("click", () => {
+  closeModal(previewModal);
+});
 
 // Functionality of edit profile button
 // open modal
@@ -119,10 +144,10 @@ function handleAddCardSubmit(evt) {
   console.log(newLinkInput.value);
   console.log(newCaptionInput.value);
 
-   const cardElement = getCardElement({
+  const cardElement = getCardElement({
     name: newCaptionInput.value,
-    link: newLinkInput.value
-   });
+    link: newLinkInput.value,
+  });
   cardsList.prepend(cardElement);
 
   closeModal(newPostModal);
