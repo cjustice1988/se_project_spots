@@ -153,6 +153,13 @@
   border-radius: 8px;
 }
 
+@media screen and (max-width: 320px) {
+  .modal__caption {
+    font-size: 16px;
+  }
+}
+
+
 @media screen and (max-width: 627px) {
   .modal {
     padding-left: 10px;
@@ -189,11 +196,5 @@
 
   .modal__image {
     max-width: unset;
-  }
-}
-
-@media screen and (max-width = 320px) {
-  .modal__caption {
-    font-size: 16px;
   }
 }
