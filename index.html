@@ -57,7 +57,7 @@
       <div class="modal" id="edit-profile-modal">
         <div class="modal__container">
           <button type="button" class="modal__close-btn">
-            <img src="./images/Close Icon.png" />
+            <img src="./images/Close-Icon.png" alt="Close" />
           </button>
           <h2 class="modal__title">Edit profile</h2>
           <form class="modal__form">
@@ -98,6 +98,7 @@
                 type="url"
                 class="modal__input"
                 placeholder="Paste a link to the picture"
+                required
               />
             </label>
             <label for="card-caption-input" class="modal__label"
@@ -107,6 +108,7 @@
                 type="text"
                 class="modal__input"
                 placeholder="Type your caption"
+                required
               />
             </label>
             <button type="submit" class="modal__save-btn">Save</button>
@@ -116,8 +118,11 @@
 
       <div class="modal modal_type_preview" id="preview_modal">
         <div class="modal__image-container">
-          <button type="button" class="modal__close-btn_preview">
-            <img src="./images/Close Icon.png" />
+          <button
+            type="button"
+            class="modal__close-btn modal__close-btn_preview"
+          >
+            <img src="./images/Close-Icon.png" alt="Close" />
           </button>
           <img src="#" alt="" class="modal__image" />
           <p class="modal__caption"></p>

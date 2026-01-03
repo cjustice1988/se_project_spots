@@ -9,6 +9,7 @@
   height: 413px;
   width: 413px;
   border-radius: 8px;
+  cursor: pointer;
   object-fit: cover;
   display: block;
 }

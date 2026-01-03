@@ -3,7 +3,7 @@
   /* shouldnt need the above declaration with starting on opacity:0*/
   opacity: 0;
   pointer-events: none;
-  transition: visibility 0.3s opacity 0.3s ease-in;
+  transition: visibility 0.3s, opacity 0.3s ease-in;
   background-color: #00000080;
   position: fixed;
   display: flex;
@@ -24,7 +24,7 @@
   /* shouldnt need the above declaration with opacity:1*/
   opacity: 1;
   pointer-events: auto;
-  transition: opacity 1s ease;
+  transition: opacity 0.3s ease-in;
 }
 
 .modal__container {
@@ -189,5 +189,11 @@
 
   .modal__image {
     max-width: unset;
+  }
+}
+
+@media screen and (max-width = 320px) {
+  .modal_type_preview {
+    font-size: 16px;
   }
 }
