@@ -141,8 +141,6 @@ newPostModalCloseBtn.addEventListener("click", function () {
 
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
-  console.log(newLinkInput.value);
-  console.log(newCaptionInput.value);
 
   const cardElement = getCardElement({
     name: newCaptionInput.value,
