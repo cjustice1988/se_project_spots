@@ -42,17 +42,18 @@ const editProfileText = document.querySelector(".profile__name");
 const editProfileInput = document.querySelector("#profile-name-input");
 const editDescriptionText = document.querySelector(".profile__description");
 const editDescriptionInput = document.querySelector(
-  "#profile-description-input"
+  "#profile-description-input",
 );
 
 const editProfileForm = editProfileModal.querySelector(".modal__form");
 const addCardForm = newPostModal.querySelector(".modal__form");
 const newLinkInput = newPostModal.querySelector("#card-image-input");
 const newCaptionInput = newPostModal.querySelector("#card-caption-input");
-
+// button
+const modalSubmitButton = newPostModal.querySelector(".modal__save-btn");
 const previewModal = document.querySelector("#preview_modal");
 const previewModalCloseBtn = previewModal.querySelector(
-  ".modal__close-btn_preview"
+  ".modal__close-btn_preview",
 );
 const previewImageElement = previewModal.querySelector(".modal__image");
 const previewCaptionElement = previewModal.querySelector(".modal__caption");
@@ -108,6 +109,7 @@ previewModalCloseBtn.addEventListener("click", () => {
 // Functionality of edit profile button
 // open modal
 editProfileBtn.addEventListener("click", function () {
+  resetValidation(editProfileForm, [editProfileInput, editDescriptionInput]);
   openModal(editProfileModal);
   editProfileInput.value = editProfileText.textContent;
   editDescriptionInput.value = editDescriptionText.textContent;
@@ -148,7 +150,9 @@ function handleAddCardSubmit(evt) {
   });
   cardsList.prepend(cardElement);
 
-  evt.target.reset()
+  evt.target.reset();
+  disableButton(modalSubmitButton);
+  //  toggleButtonState(inputList, buttonElement);
   closeModal(newPostModal);
 }
 
