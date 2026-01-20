@@ -46,7 +46,7 @@ const editDescriptionInput = document.querySelector(
 );
 
 const editProfileForm = editProfileModal.querySelector(".modal__form");
-const addCardForm = newPostModal.querySelector(".modal__form");
+const addCardForm = newPostModal.querySelector(config.formSelector);
 const newLinkInput = newPostModal.querySelector("#card-image-input");
 const newCaptionInput = newPostModal.querySelector("#card-caption-input");
 // button
@@ -151,8 +151,7 @@ function handleAddCardSubmit(evt) {
   cardsList.prepend(cardElement);
 
   evt.target.reset();
-  disableButton(modalSubmitButton);
-  //  toggleButtonState(inputList, buttonElement);
+  disableButton(modalSubmitButton, config);
   closeModal(newPostModal);
 }
 
