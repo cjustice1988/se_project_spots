@@ -96,6 +96,21 @@ function getCardElement(data) {
 
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
+
+  const modals = document.querySelectorAll(".modal");
+  modals.forEach((modal) => {
+    modal.addEventListener("mousedown", (evt) => {
+      // Check what was clicked...
+      modal.addEventListener("mousedown", (evt) => {
+        if (
+          evt.target.classList.contains("modal") ||
+          evt.target.classList.contains("modal__close-btn")
+        ) {
+          closeModal(evt.currentTarget);
+        }
+      });
+    });
+  });
 }
 
 function closeModal(modal) {
