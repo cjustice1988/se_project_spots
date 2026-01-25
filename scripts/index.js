@@ -96,19 +96,21 @@ function getCardElement(data) {
 
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
+  document.addEventListener("keydown", (evt) => {
+    if (evt.key === "Escape") {
+      closeModal(modal);
+    }
+  });
 
   const modals = document.querySelectorAll(".modal");
   modals.forEach((modal) => {
     modal.addEventListener("mousedown", (evt) => {
-      // Check what was clicked...
-      modal.addEventListener("mousedown", (evt) => {
-        if (
-          evt.target.classList.contains("modal") ||
-          evt.target.classList.contains("modal__close-btn")
-        ) {
-          closeModal(evt.currentTarget);
-        }
-      });
+      if (
+        evt.target.classList.contains("modal") ||
+        evt.target.classList.contains("modal__close-btn")
+      ) {
+        closeModal(evt.currentTarget);
+      }
     });
   });
 }
@@ -124,7 +126,11 @@ previewModalCloseBtn.addEventListener("click", () => {
 // Functionality of edit profile button
 // open modal
 editProfileBtn.addEventListener("click", function () {
-  resetValidation(editProfileForm, [editProfileInput, editDescriptionInput]);
+  resetValidation(
+    editProfileForm,
+    [editProfileInput, editDescriptionInput],
+    config,
+  );
   openModal(editProfileModal);
   editProfileInput.value = editProfileText.textContent;
   editDescriptionInput.value = editDescriptionText.textContent;
