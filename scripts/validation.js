@@ -45,7 +45,6 @@ const hasInvalidInput = (inputList, config) => {
 };
 
 const toggleButtonState = (inputList, buttonElement, config) => {
-  console.log(hasInvalidInput(inputList));
   if (hasInvalidInput(inputList)) {
     disableButton(buttonElement, config);
   } else {
@@ -74,8 +73,8 @@ const setEventListeners = (formElement, config) => {
   toggleButtonState(inputList, buttonElement, config);
 
   inputList.forEach((inputElement) => {
-    inputElement.addEventListener("input", config, function () {
-      checkInputValidity(formElement, inputElement);
+    inputElement.addEventListener("input", function () {
+      checkInputValidity(formElement, inputElement, config);
       toggleButtonState(inputList, buttonElement, config);
     });
   });
